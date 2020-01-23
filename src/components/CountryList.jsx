@@ -52,7 +52,7 @@ class CountryList extends Component {
             </tr>) : Object.keys(datas).map(key =>
             <tr key={key}>
               <td><Col xs={1} sm={1}>
-                    <Image src={datas[key].flag} fluid/>
+                    <Image style={{width: 50}} src={datas[key].flag}/>
                   </Col></td>              
               <td>{datas[key].name}</td>
               <td>{datas[key].capital}</td>
