@@ -33,7 +33,6 @@ class CountryList extends Component {
           <tr>
             <th>FLAG</th>
             <th>COUNTRY</th>
-            <th>CODE</th>
             <th>CAPITAL</th>
             <th>REGION</th>
             <th>POPULATION</th>
