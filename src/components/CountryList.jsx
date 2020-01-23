@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Table , Image, Col } from 'react-bootstrap'
 
 
-class CountryList extends Component {
+class CountryList extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
@@ -41,13 +41,13 @@ class CountryList extends Component {
         <tbody>
           { searchKey? Object.keys(datas).filter((key)=> { return searchKey.toUpperCase().indexOf(datas[key].alpha3Code.toUpperCase())!== -1}).map(key =>
             <tr key={key}>
-              {/* {<td><Col xs={1} md={1}>
-                    <Image src={datas[key].flag} thumbnail/>
-                  </Col></td>
+              <td><Col xs={1} sm={1}>
+                    <Image style={{width: 50}} src={datas[key].flag}/>
+                  </Col></td>   
               <td>{datas[key].name}</td>
               <td>{datas[key].capital}</td>
               <td>{datas[key].region}</td>
-              <td>{datas[key].population}</td>} */}
+              <td>{datas[key].population}</td>
               
             </tr>) : Object.keys(datas).map(key =>
             <tr key={key}>
