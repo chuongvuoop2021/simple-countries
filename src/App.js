@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
-import CountryList from './components/CountryList';
-import NaviBar from './components/NavBar';
+import React, {Component} from 'react'
+import './App.css'
+import CountryList from './components/CountryList'
+import NaviBar from './components/NavBar'
 import Banner from './components/Banner'
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {searchKey:''};
+    this.state = {searchKey:''}
   }
   async setSearch(data){
     await this.setState({searchKey:data})
@@ -21,8 +21,8 @@ class App extends Component {
          <Banner></Banner>
          <CountryList searchKey={this.state.searchKey}></CountryList>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Navbar,Button, Form ,FormControl} from 'react-bootstrap'
+import React, {Component} from 'react'
+import {Navbar,Button, Form ,FormControl} from 'react-bootstrap'
 
 class NaviBar extends Component {
     constructor(props){
@@ -48,8 +48,8 @@ class NaviBar extends Component {
                 </Navbar.Collapse>
             </Navbar>
 
-        );
+        )
     }
 }
 
-export default NaviBar;
+export default NaviBar

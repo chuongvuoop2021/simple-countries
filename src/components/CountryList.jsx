@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios'
-import { Table , Image, Col } from 'react-bootstrap'
+import {Table , Image, Col} from 'react-bootstrap'
 
 
 class CountryList extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { 
+    this.state = {
       countrydetails: {},
-      country:{},     
+      country: {},     
   }
   }
 
@@ -16,7 +16,7 @@ class CountryList extends React.Component {
     axios.get('https://restcountries.eu/rest/v2/all')
       .then(response => {
         // console.log(response.data);
-        this.setState({ countrydetails: response.data })
+        this.setState({countrydetails: response.data})
       })
       .catch(error => {
         console.log(error);
@@ -39,7 +39,7 @@ class CountryList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          { searchKey? Object.keys(datas).filter((key)=> { return searchKey.toUpperCase().indexOf(datas[key].alpha3Code.toUpperCase())!== -1}).map(key =>
+          {searchKey? Object.keys(datas).filter((key)=> {return searchKey.toUpperCase().indexOf(datas[key].alpha3Code.toUpperCase())!== -1}).map(key =>
             <tr key={key}>
               <td><Col xs={1} sm={1}>
                     <Image style={{width: 50}} src={datas[key].flag}/>
@@ -66,4 +66,4 @@ class CountryList extends React.Component {
   }
 }
 
-export default CountryList;
+export default CountryList
