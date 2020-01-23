@@ -40,13 +40,12 @@ class CountryList extends Component {
           </tr>
         </thead>
         <tbody>
-          { searchKey? Object.keys(datas).filter((key)=> { return searchKey.toLowerCase().indexOf(datas[key].alpha2Code.toLowerCase())!== -1}).map(key =>
+          { searchKey? Object.keys(datas).filter((key)=> { return searchKey.toUpperCase().indexOf(datas[key].alpha3Code.toUpperCase())!== -1}).map(key =>
             <tr key={key}>
               <td><Col xs={1} md={1}>
                     <Image src={datas[key].flag} thumbnail/>
                   </Col></td>
               <td>{datas[key].name}</td>
-              <td>{datas[key].alpha2Code}</td>
               <td>{datas[key].capital}</td>
               <td>{datas[key].region}</td>
               <td>{datas[key].population}</td>
@@ -57,7 +56,6 @@ class CountryList extends Component {
                     <Image src={datas[key].flag} thumbnail/>
                   </Col></td>              
               <td>{datas[key].name}</td>
-              <td>{datas[key].alpha2Code}</td>
               <td>{datas[key].capital}</td>
               <td>{datas[key].region}</td>
               <td>{datas[key].population}</td>

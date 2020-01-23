@@ -6,7 +6,7 @@ class Banner extends Component {
         return (
             <Jumbotron fluid>
                 <Container>
-                    <h1>Find a Country</h1>
+                    <h1>Simple ReactJS Countries API App</h1>
                 </Container>
             </Jumbotron>
         );

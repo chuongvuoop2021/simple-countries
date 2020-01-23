@@ -25,7 +25,7 @@ class NaviBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Form inline>
-                        <FormControl type="text" onChange={this.searchFor.bind(this)} placeholder="Search" className="mr-sm-2" />
+                        <FormControl type="text" onChange={this.searchFor.bind(this)} placeholder="Enter Country Code" className="mr-sm-2" />
                         <Button variant="outline-success" onClick={()=>{this.search()}}>Search</Button>
                     </Form>
                 </Navbar.Collapse>
