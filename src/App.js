@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+
 import './App.css'
 import CountryList from './components/CountryList'
 import NaviBar from './components/NavBar'
@@ -11,7 +12,7 @@ class App extends Component {
     this.state = {searchKey:''}
   }
   async setSearch(data){
-    await this.setState({searchKey:data})
+    this.setState({searchKey:data})
   }
 
   render() {

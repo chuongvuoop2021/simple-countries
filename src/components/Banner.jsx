@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import { Jumbotron ,Container } from 'react-bootstrap'
+import React, {Component} from 'react';
+import {Jumbotron ,Container} from 'react-bootstrap'
 
-class Banner extends Component {
-    render() {
-        return (
-            <Jumbotron fluid>
-                <Container>
-                    <h1>Simple ReactJS Countries API App</h1>
-                </Container>
-            </Jumbotron>
-        );
-    }
+function Banner() {
+  return (
+      <Jumbotron fluid>
+          <Container>
+              <h1>Simple ReactJS Countries API App</h1>
+          </Container>
+      </Jumbotron>
+  )
 }
 
-export default Banner;
+export default Banner

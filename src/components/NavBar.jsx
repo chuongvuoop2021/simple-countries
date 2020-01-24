@@ -11,7 +11,7 @@ class NaviBar extends Component {
     async searchFor(e){
         let word=e.target.value
         if (word.length>2){
-            await this.setState({searchkey:word})
+          this.setState({searchkey:word})
             
         }
     }
