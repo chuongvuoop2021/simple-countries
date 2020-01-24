@@ -15,7 +15,7 @@ function App(props) {
 
     return (
       <div>
-         <NaviBar setSearch={this.setSearch.bind(this)}></NaviBar>
+         <NaviBar setSearch={setSearch.bind(this)}></NaviBar>
          <Banner></Banner>
          <CountryList searchKey={searchKey}></CountryList>
       </div>
