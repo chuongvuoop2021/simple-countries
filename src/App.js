@@ -1,29 +1,25 @@
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 
 import './App.css'
+
 import CountryList from './components/CountryList'
 import NaviBar from './components/NavBar'
 import Banner from './components/Banner'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [setSearch] = React.useState('')
 
-    this.state = {searchKey:''}
-  }
-  async setSearch(data){
+  async function setSearch(data){
     this.setState({searchKey:data})
   }
 
-  render() {
     return (
       <div>
-         <NaviBar setSearch={this.setSearch.bind(this)}></NaviBar>
+         <NaviBar setSearch={setSearch.bind(this)}></NaviBar>
          <Banner></Banner>
-         <CountryList searchKey={this.state.searchKey}></CountryList>
+         <CountryList searchKey={searchKey}></CountryList>
       </div>
     )
   }
-}
 
 export default App

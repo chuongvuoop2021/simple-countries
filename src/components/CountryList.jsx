@@ -9,7 +9,7 @@ class CountryList extends React.Component {
     this.state = {
       countrydetails: {},
       country: {},     
-  }
+    }
   }
 
   componentDidMount() {
@@ -19,7 +19,7 @@ class CountryList extends React.Component {
         this.setState({countrydetails: response.data})
       })
       .catch(error => {
-        console.log(error);
+        console.log(error)
       });
   }
   render() {
@@ -62,7 +62,7 @@ class CountryList extends React.Component {
         </tbody>
       </Table>
       </div>
-    );
+    )
   }
 }
 
