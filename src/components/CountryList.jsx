@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
-import {Table , Image, Col} from 'react-bootstrap'
+import { Table, Image, Col } from 'react-bootstrap'
 
 
 class CountryList extends React.Component {
@@ -16,7 +16,7 @@ class CountryList extends React.Component {
     axios.get('https://restcountries.eu/rest/v2/all')
       .then(response => {
         // console.log(response.data);
-        this.setState({countrydetails: response.data})
+        this.setState({ countrydetails: response.data })
       })
       .catch(error => {
         console.log(error)
@@ -24,7 +24,7 @@ class CountryList extends React.Component {
   }
   render() {
     let datas = this.state.countrydetails
-    const {searchKey}=this.props
+    const { searchKey } =this.props
    // console.log(this.props.searchKey)
     return (
       <div>
@@ -39,26 +39,32 @@ class CountryList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {searchKey? Object.keys(datas).filter((key)=> {return searchKey.toUpperCase().indexOf(datas[key].alpha3Code.toUpperCase())!== -1}).map(key =>
+          { searchKey? Object.keys(datas).filter((key)=> 
+            { return searchKey.toUpperCase().indexOf(datas[key].alpha3Code.toUpperCase())!== -1 }).map(key =>
             <tr key={key}>
-              <td><Col xs={1} sm={1}>
-                    <Image style={{width: 50}} src={datas[key].flag}/>
-                  </Col></td>   
-              <td>{datas[key].name}</td>
-              <td>{datas[key].capital}</td>
-              <td>{datas[key].region}</td>
-              <td>{datas[key].population}</td>
-              
+              <td>
+                <Col xs={1} sm={1}>
+                  <Image style= {{ width: 50 }} src={datas[key].flag}/>
+                </Col>
+              </td>   
+              <td> { datas[key].name } </td>
+              <td> { datas[key].capital } </td>
+              <td> { datas[key].region } </td>
+              <td> { datas[key].population } </td>  
+              <td> { datas[key].population } </td>
             </tr>) : Object.keys(datas).map(key =>
-            <tr key={key}>
-              <td><Col xs={1} sm={1}>
-                    <Image style={{width: 50}} src={datas[key].flag}/>
-                  </Col></td>              
-              <td>{datas[key].name}</td>
-              <td>{datas[key].capital}</td>
-              <td>{datas[key].region}</td>
-              <td>{datas[key].population}</td>
-            </tr>)}
+            <tr key = {key}>
+              <td>
+                <Col xs = {1} sm = {1}>
+                  <Image style= {{ width: 50 }} src = { datas[key].flag } />
+                </Col>
+              </td>              
+              <td> { datas[key].name } </td>
+              <td> { datas[key].capital } </td>
+              <td> { datas[key].region } </td>
+              <td> { datas[key].population } </td>  
+            </tr>)
+          }
         </tbody>
       </Table>
       </div>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {Jumbotron ,Container} from 'react-bootstrap'
 
 function Banner() {

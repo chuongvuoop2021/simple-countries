@@ -1,24 +1,26 @@
-import React, {Component} from 'react'
-import {Navbar,Button, Form ,FormControl} from 'react-bootstrap'
+import React, { Component } from 'react'
+import { Navbar, Button, Form, FormControl } from 'react-bootstrap'
 
 class NaviBar extends Component {
-    constructor(props){
-      super(props)
-      this.state={
-          searchkey:''
-      }
+  constructor(props) {
+    super(props)
+    this.state = {
+      searchkey:''
     }
-    async searchFor(e){
-      let word=e.target.value
-      if (word.length>2){
-        this.setState({searchkey:word})
-          
-      }
+  }
+
+  async searchFor(e){
+    let word=e.target.value
+    if (word.length>2){
+      this.setState({searchkey:word})
     }
-    search(){
-      this.props.setSearch(this.state.searchkey)
-    }
-    render() {
+  }
+
+  search(){
+    this.props.setSearch(this.state.searchkey)
+  }
+
+  render() {
     return (
       <Navbar className='navbar navbar-dark bg-dark'>
         <Navbar.Brand href="#home">Countries API</Navbar.Brand>
@@ -30,7 +32,7 @@ class NaviBar extends Component {
             <option>EFTA</option>
             <option>CARICOM</option>
             <option>PA</option>
-            <option tion>AU</option>
+            <option>AU</option>
             <option>USAN</option>
             <option>EEU</option>
             <option>AL</option>
@@ -41,13 +43,12 @@ class NaviBar extends Component {
             <option>SAARC</option>
           </select>
 
-          <Form inline>
+        <Form inline>
             <FormControl type="text" onChange={this.searchFor.bind(this)} placeholder="Enter Country Code" className="mr-sm-2" />
             <Button variant="outline-success" onClick={()=>{this.search()}}>Search</Button>
-          </Form>
+        </Form>
         </Navbar.Collapse>
       </Navbar>
-
     )
   }
 }
