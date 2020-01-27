@@ -1,10 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
+
 import './App.css'
 import CountryList from './components/CountryList'
 import NaviBar from './components/NavBar'
 import Banner from './components/Banner'
 
-class App extends Component {
+function App() {
+  const [searchKey, setSearchKey] = useState('')
+
+  async function setSearch(data){
+    setSearchKey({ data })
+  }
+
+  return (
+    <div>
+      <NaviBar setSearch={ setSearch.bind(this) }></NaviBar>
+      <Banner></Banner>
+      <CountryList searchKey = { searchKey }></CountryList>
+    </div>
+  )
+}
+
+export default App
+
+
+
+//Class Component
+/* class App extends Component {
   constructor(props) {
     super(props);
 
@@ -26,3 +48,4 @@ class App extends Component {
 }
 
 export default App
+ */

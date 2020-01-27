@@ -9,14 +9,12 @@ class NaviBar extends Component {
     }
   }
 
-  async searchFor(e){
+  searchFor = (e) => {
     let word=e.target.value
-    if (word.length>2){
-      this.setState({searchkey:word})
-    }
+    this.setState({searchkey:word})
   }
 
-  search(){
+  search = () => {
     this.props.setSearch(this.state.searchkey)
   }
 
@@ -44,8 +42,8 @@ class NaviBar extends Component {
           </select>
 
         <Form inline>
-            <FormControl type="text" onChange={this.searchFor.bind(this)} placeholder="Enter Country Code" className="mr-sm-2" />
-            <Button variant="outline-success" onClick={()=>{this.search()}}>Search</Button>
+            <FormControl type="text" onChange={this.searchFor} placeholder="Enter Country Code" className="mr-sm-2" />
+            <Button variant="outline-success" onClick={this.search}>Search</Button>
         </Form>
         </Navbar.Collapse>
       </Navbar>
