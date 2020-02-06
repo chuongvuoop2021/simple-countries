@@ -1,22 +1,19 @@
 import React, { Component, useState } from 'react'
 
 import './App.css'
-import CountryList from './components/CountryList'
+import CountryList from './components/FetchCountries'
 import NaviBar from './components/NavBar'
 import Banner from './components/Banner'
 
+// functional component
 function App() {
   const [searchKey, setSearchKey] = useState('')
 
-  async function setSearch(data){
-    setSearchKey({ data })
-  }
-
   return (
     <div>
-      <NaviBar setSearch={ setSearch.bind(this) }></NaviBar>
+      <NaviBar setSearch={setSearchKey}></NaviBar>
       <Banner></Banner>
-      <CountryList searchKey = { searchKey }></CountryList>
+      <CountryList searchKey={searchKey}></CountryList>
     </div>
   )
 }
@@ -32,7 +29,7 @@ export default App
 
     this.state = { searchKey:'' }
   }
-  async setSearch(data){
+  setSearch(data){
     this.setState({ searchKey:data })
   }
 
@@ -47,5 +44,4 @@ export default App
   }
 }
 
-export default App
- */
+export default App */

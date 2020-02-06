@@ -1,7 +1,7 @@
 import { Table, Image, Col } from 'react-bootstrap'
 import React, { Component } from 'react';
 
-function CountryList2(props) {
+function CountriesTable(props) {
   return (
     <Table striped bordered hover variant="dark">
       <thead>
@@ -34,4 +34,4 @@ function CountryList2(props) {
   )
 }
 
-export default CountryList2
+export default CountriesTable
